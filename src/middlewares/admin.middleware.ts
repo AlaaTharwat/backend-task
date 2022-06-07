@@ -8,13 +8,10 @@ import RequestWithUser from '../interfaces/requestWithUser.interface';
 import userModel from '../user/user.model';
 
 async function hasAdminPermission(request: RequestWithUser, response: Response, next: NextFunction) {
-    // 1- Check if (isUserGlobalManger())  >> return Middleware Next()
-    // 2- FindOne with (user_id, group_id) 
-    //if user have a role (Manger) on this Group from RoleSchema >> middleware >> Next()
-    
-    const role = request.role;
+  
+    const role = request.role; 
     const user = request.user;
-    if (role === 'globalManager' || role === 'manager') {
+    if (role === 'globalManager' || role === 'manager') {   
         return next();
     }
 

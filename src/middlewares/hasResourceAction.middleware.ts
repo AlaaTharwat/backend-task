@@ -14,8 +14,7 @@ function hasResourcePermissionsMiddleware(resourceValue: string, method: string)
     return async (request: RequestWithUser, response: Response, next: NextFunction) => {
       const user = await userService.findUserById(request.user._id);
       const requestedUserRole = user.role.find(r => r.groupId == request.query?.groupid || !r.groupId );
-      request.role = requestedUserRole?.role
-      console.log(requestedUserRole)
+      request.role = requestedUserRole?.role  //get role by groupId  and pass it with request to next MW
       if(!requestedUserRole)  return next(new NotAuthorizedException())
       const privillages = await resourceService.getResource(resourceValue);
       let resource_privillage = privillages?.resources_roles.find(role => role?.role_name === requestedUserRole.role);
