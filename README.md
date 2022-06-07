@@ -14,7 +14,7 @@ To run this project, install it locally using npm:
 
 * Clone this repository:
 ```
-$ get clone https://github.com/AlaaTharwat/backend-task
+$ git clone https://github.com/AlaaTharwat/backend-task
 ```
 
 * install packages:
