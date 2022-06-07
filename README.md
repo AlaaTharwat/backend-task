@@ -6,7 +6,7 @@ Project is created with:
 * Nodejs: 14.17.3
 * mongodb: v4.4.5
 
-## Technologies
+## Framework
 * Express: 4.18.1
 
 ## QuickStart
