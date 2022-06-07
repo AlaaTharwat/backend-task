@@ -25,12 +25,6 @@ const userSchema = new mongoose.Schema(
     },
 );
 
-// userSchema.virtual('posts', {
-//     ref: 'Post',
-//     localField: '_id',
-//     foreignField: 'author',
-// });
-
 const userModel = mongoose.model<User & mongoose.Document>('User', userSchema);
 
 export default userModel;

@@ -18,11 +18,7 @@ const groupSchema = new mongoose.Schema(
     },
 );
 
-// userSchema.virtual('groupId', {
-//     ref: 'Role',
-//     localField: '_id',
-//     foreignField: 'groupId',
-// });
+
 
 const groupModel = mongoose.model<Group & mongoose.Document>('Group', groupSchema);
 

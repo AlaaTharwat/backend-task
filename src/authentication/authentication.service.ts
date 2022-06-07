@@ -16,17 +16,7 @@ import UserRepository from '../user/user.repository';
 class AuthenticationService {
   constructor(private readonly userRepository: UserRepository) {
   }
-
-  // public user = userModel;
-  // public userService =  new UserService();
-
-
   public async register(userData: CreateUserDto) {
-    // if (
-    //   await this.user.findOne({ email: userData.email })
-    // ) {
-    //   throw new UserExistsException(userData.email);
-    // }
 
     if (
       await this.userRepository.getOneByEmail(userData.email)
@@ -34,10 +24,6 @@ class AuthenticationService {
       throw new UserExistsException(userData.email);
     }
     const hashedPassword = await bcrypt.hash(userData.password, 10);
-    // const user = await this.user.create({
-    //   ...userData,
-    //   password: hashedPassword,
-    // });
 
     const user = await this.userRepository.save({
       ...userData,

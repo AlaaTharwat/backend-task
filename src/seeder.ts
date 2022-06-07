@@ -10,12 +10,6 @@ export default class Seeder {
         if (data.length !== 0) {
             return;
         }
-        // const roles = await Role.find().exec();
-
-        // let admin_id = roles.find(r => r.name == "admin");
-        // let basic_id = roles.find(r => r.name == "basic");
-        // let user_id = roles.find(r => r.name == "user");
-
         let resources = [{
             name: "user",
             slug: "user",

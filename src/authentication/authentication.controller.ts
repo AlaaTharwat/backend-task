@@ -26,14 +26,6 @@ class AuthenticationController implements Controller {
     this.initializeRoutes();
   }
 
-  // public authenticationService = new AuthenticationService();
-  // public userService =  new UserService();
-  // private user = userModel;
-
-  // constructor() {
-  //   this.initializeRoutes();
-  // }
-
   private initializeRoutes() {
     this.router.post(`${this.path}/adduser`, validationMiddleware(CreateUserDto), authMiddleware,   
      hasResourcePermissionsMiddleware("user", "create") 
