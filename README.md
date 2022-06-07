@@ -27,8 +27,7 @@ $ nodemon
 
 **It's important to add .env file with these keys:**
 * JWT_SECRET
-* jwtExpiration
-* jwtRefreshExpiration 
+* EmailPassword
 
 
 
